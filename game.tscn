@@ -1,3 +1,43 @@
 [gd_scene format=3 uid="uid://df3i3w81usxd4"]
 
+[ext_resource type="Texture2D" uid="uid://df6p4xbspigtn" path="res://assets/art/bg-temp.png" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://bhx8d1jfxh8" path="res://game.gd" id="1_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://bnie3wa37xoul" path="res://assets/art/arrow-up.png" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://coavbs4a53kcl" path="res://assets/art/arrow-down.png" id="3_fc0e3"]
+
 [node name="Game" type="Node" unique_id=933227945]
+script = ExtResource("1_fc0e3")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=720516956]
+position = Vector2(480, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("1_80nbo")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=554940099]
+position = Vector2(480, 360)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1420808540]
+
+[node name="LookUp" type="TextureButton" parent="CanvasLayer" unique_id=515411951]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4.0
+offset_right = 4.0
+offset_bottom = 8.0
+grow_horizontal = 2
+texture_normal = ExtResource("2_feb5d")
+
+[node name="LookDown" type="TextureButton" parent="CanvasLayer" unique_id=634226523]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+texture_normal = ExtResource("3_fc0e3")
