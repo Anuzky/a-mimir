@@ -1,17 +1,22 @@
 extends Node
 
 @onready var cam = $Camera2D
-@onready var look_up_btn = $CanvasLayer/LookUp
-@onready var look_down_btn = $CanvasLayer/LookDown
+@onready var ui = $UI
+@onready var look_up_btn = $UI/LookUp
+@onready var look_down_btn = $UI/LookDown
+@onready var interactables = $Interactables
 
 var looking_up = false
 var looking_down = false
+var is_in_minigame = false
 
 func _ready() -> void:
 	look_up_btn.connect("button_down",_on_look_up.bind(true))
 	look_down_btn.connect("button_down",_on_look_down.bind(true))
 	look_up_btn.connect("button_up",_on_look_up.bind(false))
 	look_down_btn.connect("button_up",_on_look_down.bind(false))
+	for interactable : Interactable in interactables.get_children():
+		interactable.start_minigame.connect(_on_start_minigame)
 	
 func _process(delta: float) -> void:
 	if looking_up:
@@ -34,3 +39,8 @@ func _on_look_down(pressed : bool):
 			looking_down = true
 	else:
 		looking_down = false
+		
+func _on_start_minigame(minigame : PackedScene):
+	is_in_minigame = true
+	get_tree().call_group("buttons", "set_disabled",true)
+	ui.open_minigame(minigame)

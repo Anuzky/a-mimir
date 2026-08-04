@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://ccd6pkxmov8ie"]
+
+[ext_resource type="Script" uid="uid://c7v16xuoiltyl" path="res://minigames/nonogram/nonogram.gd" id="1_rwdrn"]
+[ext_resource type="FontFile" uid="uid://dxtmbn6s30iu8" path="res://assets/Abaddon Bold.ttf" id="2_jqsfx"]
+[ext_resource type="Texture2D" uid="uid://cpyyx68fjnu4s" path="res://minigames/nonogram/nono_filled.png" id="2_slg7x"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jqsfx"]
+texture = ExtResource("2_slg7x")
+texture_region_size = Vector2i(66, 66)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vn488"]
+tile_size = Vector2i(66, 66)
+sources/0 = SubResource("TileSetAtlasSource_jqsfx")
+
+[node name="Nonogram" type="Node" unique_id=230047186]
+script = ExtResource("1_rwdrn")
+
+[node name="LeftNumbers" type="GridContainer" parent="." unique_id=1949817903]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = -165.0
+offset_right = -173.0
+offset_bottom = 165.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="Label" type="Label" parent="LeftNumbers" unique_id=792237348]
+custom_minimum_size = Vector2(60, 66)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jqsfx")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="LeftNumbers" unique_id=2130875120]
+custom_minimum_size = Vector2(60, 66)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jqsfx")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="LeftNumbers" unique_id=931179615]
+custom_minimum_size = Vector2(60, 66)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jqsfx")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="LeftNumbers" unique_id=1649978763]
+custom_minimum_size = Vector2(60, 66)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jqsfx")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="LeftNumbers" unique_id=264489050]
+custom_minimum_size = Vector2(60, 66)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jqsfx")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TopNumbers" type="GridContainer" parent="." unique_id=1927668006]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -220.0
+offset_right = 165.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 5
+
+[node name="Label" type="Label" parent="TopNumbers" unique_id=1218481538]
+custom_minimum_size = Vector2(66, 60)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("2_jqsfx")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Label2" type="Label" parent="TopNumbers" unique_id=856683729]
+custom_minimum_size = Vector2(66, 60)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("2_jqsfx")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Label3" type="Label" parent="TopNumbers" unique_id=1415756867]
+custom_minimum_size = Vector2(66, 60)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("2_jqsfx")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Label4" type="Label" parent="TopNumbers" unique_id=1015745638]
+custom_minimum_size = Vector2(66, 60)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("2_jqsfx")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Label5" type="Label" parent="TopNumbers" unique_id=1102805489]
+custom_minimum_size = Vector2(66, 60)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("2_jqsfx")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1113898175]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 315.0
+offset_top = 195.0
+offset_right = -315.0
+offset_bottom = -195.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0.11372549, 0.13333334, 0.21176471, 1)
+
+[node name="TileMap" type="TileMapLayer" parent="ColorRect" unique_id=2117579866]
+tile_set = SubResource("TileSet_vn488")
