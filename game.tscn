@@ -74,6 +74,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_j5wjh")
 
 [node name="MinigameContainer" type="Control" parent="UI" unique_id=569627227]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 255.0

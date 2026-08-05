@@ -12,7 +12,7 @@ config_version=5
 
 config/name="A Mimir"
 run/main_scene="uid://df3i3w81usxd4"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
