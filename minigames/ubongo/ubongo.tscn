@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://beiav5yl435fs"]
+
+[ext_resource type="Script" uid="uid://c6oklefd8grdo" path="res://minigames/ubongo/ubongo.gd" id="1_vtama"]
+
+[node name="Ubongo" type="Node2D" unique_id=709936914]
+script = ExtResource("1_vtama")

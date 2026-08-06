@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="110" shape-rendering="crispEdges">
+  <!-- Borde exterior (Color Claro) -->
+  <rect width="110" height="110" fill="#D9E8ED" />
+  
+  <!-- Borde interior para dar volumen (Color Oscuro) -->
+  <rect x="5" y="5" width="100" height="100" fill="#1D2236" />
+  
+  <!-- Relleno principal de la caja (Color Claro) -->
+  <rect x="10" y="10" width="90" height="90" fill="#D9E8ED" />
+
+  <!-- Cruz de madera característica de las cajas (Color Oscuro) -->
+  <polygon points="10,10 25,10 100,85 100,100 85,100 10,25" fill="#1D2236"/>
+  <polygon points="85,10 100,10 100,25 25,100 10,100 10,85" fill="#1D2236"/>
+
+  <!-- Centro de la cruz (Color Claro para contraste) -->
+  <rect x="45" y="45" width="20" height="20" fill="#D9E8ED" />
+
+  <!-- Remaches/Clavos en las esquinas (Color Oscuro) -->
+  <rect x="15" y="15" width="10" height="10" fill="#1D2236" />
+  <rect x="85" y="15" width="10" height="10" fill="#1D2236" />
+  <rect x="15" y="85" width="10" height="10" fill="#1D2236" />
+  <rect x="85" y="85" width="10" height="10" fill="#1D2236" />
+</svg>

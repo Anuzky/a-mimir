@@ -87,8 +87,10 @@ grow_vertical = 2
 [node name="Interactables" type="Node" parent="." unique_id=1404437651]
 
 [node name="Interactable" type="TextureButton" parent="Interactables" unique_id=176942443 groups=["buttons"]]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 27.0
+offset_top = 90.0
+offset_right = 76.0
+offset_bottom = 139.0
 texture_normal = ExtResource("5_ryrav")
 script = ExtResource("6_eow3j")
 minigame = ExtResource("7_eow3j")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cdbffud2kfkqf"]
+
+[ext_resource type="Script" uid="uid://c4g7nyym8dho4" path="res://minigames/ubongo/ubongo_piece.gd" id="1_4qxht"]
+
+[node name="UbongoPiece" type="Area2D" unique_id=1560971221]
+script = ExtResource("1_4qxht")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
