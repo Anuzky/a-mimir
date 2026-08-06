@@ -44,18 +44,21 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		if event.pressed:
 			is_dragging = true
 			z_index = 10 
+			
+			# Efecto pop al levantar la pieza
 			var tween = create_tween()
 			tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_BOUNCE)
 			
 			offset_from_mouse = global_position - get_global_mouse_position()
 			
+			# Si estaba en la grilla, la desvinculamos de la matriz matemática
 			if is_snapped:
 				var board = get_parent()
 				if board.has_method("remove_piece"):
 					var grid_pos = board.pixel_to_grid(global_position)
 					board.remove_piece(grid_pos, my_shape)
 				is_snapped = false
-
+				
 func _input(event: InputEvent) -> void:
 	if is_dragging and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed:
@@ -67,7 +70,6 @@ func _snap_to_grid() -> void:
 	var board = get_parent()
 	if board.has_method("try_snap"):
 		var snap_position = board.try_snap(global_position, my_shape)
-		
 		var tween = create_tween()
 		
 		if snap_position != Vector2(-1, -1):
@@ -75,4 +77,5 @@ func _snap_to_grid() -> void:
 			tween.tween_property(self, "global_position", snap_position, 0.15).set_trans(Tween.TRANS_SINE)
 			tween.parallel().tween_property(self, "scale", Vector2(1.0, 1.0), 0.15)
 		else:
+			tween.tween_property(self, "global_position", start_position, 0.25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 			tween.parallel().tween_property(self, "scale", Vector2(0.7, 0.7), 0.25)
