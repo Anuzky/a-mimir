@@ -100,6 +100,7 @@ offset_right = -245.0
 offset_bottom = -125.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_j5wjh")
 
 [node name="MinigameContainer" type="Control" parent="UI/MinigamePopup" unique_id=569627227]
@@ -113,3 +114,4 @@ offset_right = -255.0
 offset_bottom = -135.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2

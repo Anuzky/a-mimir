@@ -1,6 +1,6 @@
 extends Area2D
 
-const CELL_SIZE = 66
+const CELL_SIZE = 50
 var is_dragging = false
 var is_snapped = false
 var offset_from_mouse = Vector2.ZERO
@@ -25,12 +25,13 @@ func build_visuals_and_collisions() -> void:
 		var sprite = Sprite2D.new()
 		sprite.texture = box_texture
 		sprite.position = cell_pos
-		sprite.scale = Vector2(0.57, 0.57) 
+		
+		sprite.scale = Vector2(0.45, 0.45)  
 		add_child(sprite)
 		
 		var col = CollisionShape2D.new()
 		var shape = RectangleShape2D.new()
-		shape.size = Vector2(CELL_SIZE - 4, CELL_SIZE - 4) 
+		shape.size = Vector2(CELL_SIZE - 2, CELL_SIZE - 2)
 		col.shape = shape
 		col.position = cell_pos
 		add_child(col)
