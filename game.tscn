@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://bhx8d1jfxh8" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://bnie3wa37xoul" path="res://assets/art/arrow-up.png" id="2_feb5d"]
 [ext_resource type="Texture2D" uid="uid://coavbs4a53kcl" path="res://assets/art/arrow-down.png" id="3_fc0e3"]
-[ext_resource type="Script" uid="uid://du5ceppeurjs6" path="res://ui.gd" id="3_j5wjh"]
-[ext_resource type="Texture2D" uid="uid://cngdj6vjh2onj" path="res://assets/art/exclamation.png" id="5_ryrav"]
-[ext_resource type="Script" uid="uid://db8xxyo47i6xh" path="res://interactable.gd" id="6_eow3j"]
-[ext_resource type="PackedScene" uid="uid://ccd6pkxmov8ie" path="res://minigames/nonogram/nonogram.tscn" id="7_eow3j"]
+[ext_resource type="Script" uid="uid://du5ceppeurjs6" path="res://util/ui.gd" id="3_j5wjh"]
+[ext_resource type="Script" uid="uid://fb05yl7h3vf7" path="res://util/hud.gd" id="6_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://7t2rkux86wlk" path="res://util/interactable.tscn" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://beiav5yl435fs" path="res://minigames/ubongo/ubongo.tscn" id="7_eow3j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5wjh"]
 bg_color = Color(0.11372549, 0.13333334, 0.21176471, 1)
@@ -26,6 +26,7 @@ corner_detail = 2
 script = ExtResource("1_fc0e3")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=720516956]
+texture_filter = 1
 position = Vector2(480, 360)
 scale = Vector2(2, 2)
 texture = ExtResource("1_80nbo")
@@ -33,10 +34,36 @@ texture = ExtResource("1_80nbo")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=554940099]
 position = Vector2(480, 360)
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=1420808540]
+[node name="Interactables" type="Node" parent="." unique_id=1404437651]
+
+[node name="Phone" parent="Interactables" unique_id=864085715 instance=ExtResource("6_ryrav")]
+offset_left = 685.0
+offset_top = 262.0
+offset_right = 734.0
+offset_bottom = 311.0
+
+[node name="Attic" parent="Interactables" unique_id=1701880654 instance=ExtResource("6_ryrav")]
+offset_left = 624.0
+offset_top = -58.0
+offset_right = 673.0
+offset_bottom = -9.0
+minigame = ExtResource("7_eow3j")
+
+[node name="UI" type="Control" parent="." unique_id=126285974]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("3_j5wjh")
 
-[node name="LookUp" type="TextureButton" parent="UI" unique_id=515411951 groups=["buttons"]]
+[node name="HUD" type="CanvasLayer" parent="UI" unique_id=27805582]
+script = ExtResource("6_j5wjh")
+
+[node name="LookUp" type="TextureButton" parent="UI/HUD" unique_id=515411951]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -46,7 +73,7 @@ offset_bottom = 49.0
 grow_horizontal = 2
 texture_normal = ExtResource("2_feb5d")
 
-[node name="LookDown" type="TextureButton" parent="UI" unique_id=634226523 groups=["buttons"]]
+[node name="LookDown" type="TextureButton" parent="UI/HUD" unique_id=634226523]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -60,7 +87,10 @@ grow_vertical = 0
 size_flags_vertical = 8
 texture_normal = ExtResource("3_fc0e3")
 
-[node name="MinigamePanel" type="Panel" parent="UI" unique_id=1504011118]
+[node name="MinigamePopup" type="CanvasLayer" parent="UI" unique_id=1420808540]
+layer = 2
+
+[node name="MinigamePanel" type="Panel" parent="UI/MinigamePopup" unique_id=1504011118]
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -72,7 +102,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_j5wjh")
 
-[node name="MinigameContainer" type="Control" parent="UI" unique_id=569627227]
+[node name="MinigameContainer" type="Control" parent="UI/MinigamePopup" unique_id=569627227]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,14 +113,3 @@ offset_right = -255.0
 offset_bottom = -135.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Interactables" type="Node" parent="." unique_id=1404437651]
-
-[node name="Interactable" type="TextureButton" parent="Interactables" unique_id=176942443 groups=["buttons"]]
-offset_left = 27.0
-offset_top = 90.0
-offset_right = 76.0
-offset_bottom = 139.0
-texture_normal = ExtResource("5_ryrav")
-script = ExtResource("6_eow3j")
-minigame = ExtResource("7_eow3j")

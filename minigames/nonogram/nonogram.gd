@@ -1,9 +1,9 @@
-extends Node
+extends Minigame # signal game_won
 
-signal game_won
+#codigo de mierda incoming
 
-const rows = 5
-const cols = 5
+const rows = 4
+const cols = 4
 
 var solution = []
 var top_nums = []

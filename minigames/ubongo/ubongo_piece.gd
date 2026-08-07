@@ -35,11 +35,11 @@ func build_visuals_and_collisions() -> void:
 		col.position = cell_pos
 		add_child(col)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_dragging:
 		global_position = get_global_mouse_position() + offset_from_mouse
 
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			is_dragging = true

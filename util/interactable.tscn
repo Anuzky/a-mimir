@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://7t2rkux86wlk"]
+
+[ext_resource type="Texture2D" uid="uid://cngdj6vjh2onj" path="res://assets/art/exclamation.png" id="1_umfib"]
+[ext_resource type="Script" uid="uid://db8xxyo47i6xh" path="res://util/interactable.gd" id="2_b67o5"]
+[ext_resource type="Texture2D" uid="uid://brai8boijrybp" path="res://assets/art/exclamation_inverted.png" id="2_yy4td"]
+[ext_resource type="PackedScene" uid="uid://ccd6pkxmov8ie" path="res://minigames/nonogram/nonogram.tscn" id="3_yy4td"]
+
+[node name="Interactable" type="TextureButton" unique_id=864085715]
+offset_left = 27.0
+offset_top = 90.0
+offset_right = 76.0
+offset_bottom = 139.0
+texture_normal = ExtResource("1_umfib")
+texture_pressed = ExtResource("1_umfib")
+texture_hover = ExtResource("2_yy4td")
+script = ExtResource("2_b67o5")
+minigame = ExtResource("3_yy4td")

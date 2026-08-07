@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://c2rj3yltwkjwy"]
+
+[ext_resource type="Script" uid="uid://lcsyl3wymciq" path="res://main_menu.gd" id="1_glbon"]
+[ext_resource type="Texture2D" uid="uid://cp7f77xk3v700" path="res://assets/art/logo.png" id="1_jix8l"]
+[ext_resource type="Texture2D" uid="uid://vqcf0nx8sp60" path="res://assets/art/button1.png" id="2_glbon"]
+[ext_resource type="FontFile" uid="uid://dxtmbn6s30iu8" path="res://assets/Abaddon Bold.ttf" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://cgydvwip4ai7" path="res://assets/art/button2.png" id="4_qe12f"]
+
+[node name="MainMenu" type="Control" unique_id=16039436]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glbon")
+
+[node name="BG" type="ColorRect" parent="." unique_id=665607280]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11372549, 0.13333334, 0.21176471, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=479775248]
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 150.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture = ExtResource("1_jix8l")
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1470240322]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -402.0
+offset_right = 100.0
+offset_bottom = -202.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Play" type="TextureButton" parent="Buttons" unique_id=495247681]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+texture_normal = ExtResource("2_glbon")
+
+[node name="Label" type="Label" parent="Buttons/Play" unique_id=1131740737]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7882353, 0.9254902, 1, 1)
+theme_override_fonts/font = ExtResource("3_nlkkf")
+theme_override_font_sizes/font_size = 24
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="TextureButton" parent="Buttons" unique_id=1158831699]
+layout_mode = 2
+texture_normal = ExtResource("4_qe12f")
+
+[node name="Label" type="Label" parent="Buttons/Options" unique_id=104749194]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7882353, 0.9254902, 1, 1)
+theme_override_fonts/font = ExtResource("3_nlkkf")
+theme_override_font_sizes/font_size = 24
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1

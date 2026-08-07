@@ -1,5 +1,4 @@
-extends Node2D
-
+extends Node2D#Minigame
 signal game_won
 
 const COLS = 5
@@ -106,6 +105,7 @@ func spawn_piece(shape: Array) -> void:
 	var spacing_y = 220  
 	
 	var col = current_spawn_index % 3
+	@warning_ignore("integer_division")
 	var row = int(current_spawn_index / 3)
 	
 	piece.global_position = Vector2(start_x + (col * spacing_x), start_y + (row * spacing_y))
