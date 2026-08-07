@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://7q61bttav3w4"]
+
+[ext_resource type="Script" uid="uid://48epuybdq7ah" path="res://minigames/clicker/clicker.gd" id="1_ytmti"]
+[ext_resource type="Texture2D" uid="uid://dk1eq6ilwhq7e" path="res://assets/art/manzanita.png" id="2_atgsv"]
+[ext_resource type="FontFile" uid="uid://dxtmbn6s30iu8" path="res://assets/Abaddon Bold.ttf" id="2_gltad"]
+[ext_resource type="Texture2D" uid="uid://bl5fs4e2mirdq" path="res://assets/art/manzanita_click.png" id="3_x8u7h"]
+
+[node name="Clicker" type="Node" unique_id=2144127926]
+script = ExtResource("1_ytmti")
+
+[node name="ClickableObject" type="TextureButton" parent="." unique_id=1337328953]
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -140.0
+offset_right = 100.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_atgsv")
+texture_pressed = ExtResource("3_x8u7h")
+
+[node name="GameTimer" type="Timer" parent="." unique_id=1584994165]
+one_shot = true
+
+[node name="StartTimer" type="Timer" parent="." unique_id=1754630728]
+wait_time = 3.7
+one_shot = true
+autostart = true
+
+[node name="StartCDLabel" type="Label" parent="." unique_id=1196691911]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7882353, 0.9254902, 1, 1)
+theme_override_colors/font_outline_color = Color(0.11372549, 0.13333334, 0.21176471, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_gltad")
+theme_override_font_sizes/font_size = 59
+text = "3..."
+
+[node name="CDLabel" type="Label" parent="." unique_id=1225105345]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.0
+offset_top = 145.0
+offset_right = 23.0
+offset_bottom = 198.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.7882353, 0.9254902, 1, 1)
+theme_override_fonts/font = ExtResource("2_gltad")
+theme_override_font_sizes/font_size = 46
+
+[node name="ClicksLeft" type="Label" parent="." unique_id=139134974]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -171.0
+offset_top = -232.0
+offset_right = 171.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.7882353, 0.9254902, 1, 1)
+theme_override_colors/font_outline_color = Color(0.11372549, 0.13333334, 0.21176471, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_gltad")
+theme_override_font_sizes/font_size = 48
+text = "Clicks left: 67!"
+horizontal_alignment = 1
+
+[node name="ClickMe" type="Label" parent="." unique_id=897505803]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.0
+offset_top = 431.0
+offset_right = 96.0
+offset_bottom = 484.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.7882353, 0.9254902, 1, 1)
+theme_override_fonts/font = ExtResource("2_gltad")
+theme_override_font_sizes/font_size = 41
+text = "Click me! :)"
+horizontal_alignment = 1
